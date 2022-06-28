@@ -54,13 +54,13 @@
                 <!-- contatti -->
                 <div class="contact-container">
                     <ul>
-                        <li>
+                        <li v-for="(contact, index) in contacts ">
                             <div class="single-contact">
-                                <div class="flex-cont">
+                                <div class="contact flex-cont">
                                     <div class="user-img">
-                                        <img src="img/avatar_1.jpg" alt="pippo">
+                                        <img :src="'img/avatar'+ contact.avatar +'.jpg'" :alt="contact.name">
                                     </div>
-                                    <h3 class="contact-name">Michele</h3>
+                                    <h3 class="contact-name">{{contact.name}}</h3>
                                 </div>
 
                             </div>
@@ -77,15 +77,44 @@
                                 <img src="img/avatar_io.jpg" alt="pippo">
                             </div>
                             <h3 class="user-name">Nome tente</h3>
+                            
                         </div>
                         <div class="icons">
                             <i class="fa-solid fa-magnifying-glass"></i>
                             <i class="fa-solid fa-paperclip"></i>
                             <i class="fa-solid fa-ellipsis-vertical"></i>                       
                         </div>
+                    </div> 
+                </div>
 
+                <div class="message-area">
+                    <div class="container-message flex-message">
+
+                        <div class="message-send">
+                            ciao a tutti
+                        </div>
+    
+                        <div class="message-recived">
+                            coglione
+                        </div>
+                    </div>
                 </div>
                 
+
+                <div class="text-message flex-cont">
+                    <div class="emoticon">
+                        <i class="fa-regular fa-face-smile"></i> 
+                    </div>
+
+                    <div class="text-message">
+                        <label for="send"></label>
+                        <input type="text" id="send" placeholder="Scrivi un messaggio">
+                    </div>
+
+                    <div class="audio-message">
+                        <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </div>
 
             </section>
 

@@ -33,7 +33,6 @@ ul{
     width: 80%;
     height: 95%;
     min-width: 800px;
-    background-color: bisque;
 }
 .left-nav{
     width: 35%;
@@ -113,7 +112,8 @@ ul{
 }
 
 .search-bar i{
-    margin: 0 20px;    
+    margin: 0 20px;   
+    color: #bbbdc0;
 }
 
 .search-bar input{
@@ -127,24 +127,84 @@ ul{
 
 .contact-container{
     height: calc(100% - 180px);
-    padding: 10px;
     overflow-y: auto;
 }
 
-contact
 
-.single-contact{
-    height: 80px;
+.contact-container li{
+    border-top: 1px solid lightgray;  
 }
+
+.contact{
+    height: 70px;
+    cursor: pointer;
+    align-items: center;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
+.contact:hover{
+    background-color: #e9ebeb;
+}
+
 
 .contact-name{
     padding-left: 10px;
     font-size: 16px;
 }
 
-/* sexione chat */
+/* sezione chat */
 
+/* barra superiore */
 .main-chat{
     width: 65%;
     height: 100%;
+}
+
+.right-nav{
+    border-left: 1px solid lightgray
+}
+
+/* sezione messagi */
+.message-area{
+    height: calc(100% - 110px);
+    background-image: url(../img/mine.jpg);
+}
+
+.container-message{
+    width: 70%;
+    margin: 0 auto;
+    padding-top: 50px;
+}
+
+.flex-message{
+    display: flex;
+    flex-direction: column;
+}
+
+.message-send{
+    background-color: #d5f9ba ;
+    padding: 15px;
+    align-self: flex-end;
+    width: 45%;
+    border-radius: 15px;
+    
+}
+
+.message-recived{
+    background-color:#ffffff;
+    align-self: flex-start;
+    padding: 15px;
+    width: 45%;
+    border-radius: 15px;
+}
+
+/* sezione scrittura messagio */
+
+.text-message{
+    height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f3eeea;
+    border-left: 1px solid lightgray;
 }
