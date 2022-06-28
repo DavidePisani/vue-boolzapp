@@ -12,14 +12,14 @@
 <body>
     <div class="flex-cont" id="root">
 
-        <div class="main-container">
+        <div class="main-container flex-cont">
             <!-- container Left -->
             <section class="left-nav">
                 <!-- profilo utente   -->
                 <div class="left-container flex-cont">
                     <div class="user flex-cont">
                         <div class="user-img">
-                            <img src="img/avatar_1.jpg" alt="pippo">
+                            <img src="img/avatar_io.jpg" alt="pippo">
                         </div>
                         <h3 class="user-name">Nome tente</h3>
                     </div>
@@ -29,22 +29,71 @@
                         <i class="fa-solid fa-ellipsis-vertical"></i>                       
                     </div>
                 </div>
-
+                <!-- notifiche pc -->
                 <div class="notification">
-                    <div class="left-container flex-cont">
+                    <div class="user flex-cont">
                         <div class="bell">
                             <i class="fa-solid fa-bell-slash"></i>
                         </div>
-
-                    </div>
-
+                        <div class="recive">
+                            <h4>Ricevi notifica dei nuovi messaggi</h4>
+                            <a href="#">Attiva notifivhe del desktop</a>
+                        </div>
+                    </div>      
                 </div>
 
+                <!-- ricerca contatti -->
+                <div class="search-user">
+                    <div class="search-bar">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <label for="search"></label>
+                        <input type="text" id="search" placeholder="Cerca o inizia una nuova chat">
+                    </div>
+                </div>
+
+                <!-- contatti -->
+                <div class="contact-container">
+                    <ul>
+                        <li>
+                            <div class="single-contact">
+                                <div class="flex-cont">
+                                    <div class="user-img">
+                                        <img src="img/avatar_1.jpg" alt="pippo">
+                                    </div>
+                                    <h3 class="contact-name">Michele</h3>
+                                </div>
+
+                            </div>
+                        </li>
+                </div>
+            </section>
+
+            <!-- CHAT -->
+            <section class="main-chat">
+                <div class="right-nav">
+                    <div class="left-container flex-cont">
+                        <div class="user flex-cont">
+                            <div class="user-img">
+                                <img src="img/avatar_io.jpg" alt="pippo">
+                            </div>
+                            <h3 class="user-name">Nome tente</h3>
+                        </div>
+                        <div class="icons">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <i class="fa-solid fa-paperclip"></i>
+                            <i class="fa-solid fa-ellipsis-vertical"></i>                       
+                        </div>
+
+                </div>
                 
 
             </section>
 
+
         </div>
+
+                
+    </div>
 
 
     </div>
