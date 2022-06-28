@@ -74,9 +74,9 @@
                     <div class="left-container flex-cont">
                         <div class="user flex-cont">
                             <div class="user-img">
-                                <img src="img/avatar_io.jpg" alt="pippo">
+                                <img :src="'img/avatar'+ contacts[2].avatar +'.jpg'" :alt="contacts[2].name">
                             </div>
-                            <h3 class="user-name">Nome tente</h3>
+                            <h3 class="user-name">{{contacts[2].name}}</h3>
                             
                         </div>
                         <div class="icons">
@@ -90,7 +90,7 @@
                 <div class="message-area">
                     <div class="container-message flex-message">
 
-                        <div class="message-send">
+                        <div v-for="(contact, index) in contacts" class="message-send">
                             <div class="message">
                                 ciao a tutti
                             </div>
