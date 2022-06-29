@@ -54,7 +54,7 @@
                 <!-- contatti -->
                 <div class="contact-container">
                     <ul>
-                        <li v-for="(contact, index) in contacts ">
+                        <li v-for="(contact, index) in contacts" @click="selectChat(index)" :class="{'select-chat': currentUserActive === index}" >
                             <div class="single-contact">
                                 <div class="contact flex-cont">
                                     <div class="user-img">
@@ -74,9 +74,13 @@
                     <div class="left-container flex-cont">
                         <div class="user flex-cont">
                             <div class="user-img">
-                                <img :src="'img/avatar'+ contacts[2].avatar +'.jpg'" :alt="contacts[2].name">
+                                <img :src="'img/avatar'+ contacts[currentUserActive].avatar +'.jpg'" :alt="contacts[currentUserActive].name">
                             </div>
-                            <h3 class="user-name">{{contacts[2].name}}</h3>
+                            <div>
+                                <h3 class="user-name">{{contacts[currentUserActive].name}}</h3>
+                                <p class="last-access">Ultimo accesso alle</p>
+                            </div>
+                            
                             
                         </div>
                         <div class="icons">
@@ -90,24 +94,13 @@
                 <div class="message-area">
                     <div class="container-message flex-message">
 
-                        <div class="message-send">
-                            <div class="message">
-                                ciao a tutti
+                        <div v-for="(message, index) in contacts[currentUserActive].messages" :class=" message.status === 'sent' ? 'message-send' : 'message-recived' " >
+                            <div class="message" >
+                                {{message.text}}
                             </div>
 
                             <div class="date">
-                                10/01/2020 15:30:55'
-                            </div>
-                            
-                        </div>
-    
-                        <div class="message-recived">
-                            <div class="message">
-                                ciao a tutti
-                            </div>
-
-                            <div class="date">
-                                10/01/2020 15:30:55'
+                                {{message.date}}
                             </div>
                         </div>
                     </div>
@@ -123,20 +116,10 @@
                     <i class="fa-solid fa-microphone"></i>
                     
                 </div>
-
             </section>
-
-
-        </div>
-
-                
+        </div>               
     </div>
-
-
     </div>
-
-
-
 
     <script src="js/script.js"></script>
 </body>
