@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+i{
+    cursor: pointer;
+}
+
 body{
     font-family: "Segoe UI", Arial, sans-serif;
 }
@@ -57,6 +61,7 @@ ul{
 }
 
 .user-img > img{
+    width: 50px;
     height: 50px;
     border-radius: 50%;
 }
@@ -157,16 +162,29 @@ ul{
     background-color: #e9ebeb;
 }
 
+.user-chat {
+    flex-grow: 1;
+}
+
+.contact-container .date {
+    min-width: 100px;
+    margin-left: 20px;
+}
 
 .contact-name{
     padding-left: 10px;
     font-size: 16px;
 }
 
+.chat-user{
+    justify-content: space-between;
+}
+
 .last-message{
     font-size: 13px;
     color: #c0b8b8;
-    padding-left: 20spx;
+    padding-left: 10px;
+    
 }
 
 /* sezione chat */
@@ -205,6 +223,10 @@ ul{
     flex-direction: column;
 }
 
+.message{
+    position: relative
+}
+
 .message-send{
     background-color: #d5f9ba ;
     align-self: flex-end;
@@ -222,10 +244,25 @@ ul{
     border-radius: 12px;
 }
 
-.message{
+.message-text{
     padding: 15px;
     overflow-wrap: break-word;
     word-wrap: break-all;
+    position: relative;
+}
+
+.message-text > span{
+    text-align: end;
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: gray;
+    display: none;
+}
+
+.message-text:hover > span{
+    display: block;
+    cursor: pointer;
 }
 
 .date{
@@ -235,6 +272,28 @@ ul{
     padding-bottom: 5px;
     color: grey
 }
+
+.menu{
+    position: absolute;
+    right: -22px;
+    top: 25px;
+    box-shadow: 0 2px 1px 2px gray;
+    background-color: white;
+    text-align: center;
+    cursor:pointer;
+    z-index: 1;
+}
+
+.info,.delete{
+    padding: 5px;
+    border: 1px solid white
+}
+
+.delete:hover , .info:hover{
+    background-color: #7d8586;
+ }
+
+
 
 /* sezione scrittura messagio */
 

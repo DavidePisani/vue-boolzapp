@@ -57,14 +57,14 @@
                         <li v-for="(contact, index) in contacts" @click="selectChat(index)" v-if="contact.visible" :class="{'select-chat': currentUserActive === index}" >
                             <div class="single-contact">
                                 <div class="contact flex-cont">
-                                    <div class="user-img">
+                                    <div class="user-img flex-cont">
                                         <img :src="'img/avatar'+ contact.avatar +'.jpg'" :alt="contact.name">
                                     </div>
-                                    <div>
+                                    <div class="user-chat">
                                         <h3 class="contact-name">{{contact.name}}</h3>
-                                        <p class="last-message">{{contact.messages[contact.messages.length-1].text}}</p>
-                                    </div>
-                                    
+                                        <p v-if="contact.messages.length > 0 " class="last-message">{{contact.messages[contact.messages.length-1].text}}</p>
+                                    </div> 
+                                    <div v-if="contact.messages.length > 0"class="date">{{contact.messages[contact.messages.length-1].date}}</div>                
                                 </div>
 
                             </div>
@@ -82,7 +82,7 @@
                             </div>
                             <div>
                                 <h3 class="user-name">{{contacts[currentUserActive].name}}</h3>
-                                <p class="last-access">Ultimo accesso alle</p>
+                                <p v-if="contacts[currentUserActive].messages.length > 0" class="last-access">Ultimo accesso alle {{contacts[currentUserActive].messages[contacts[currentUserActive].messages.length-1].date}} </p>
                             </div>
                             
                             
@@ -97,14 +97,21 @@
 
                 <div class="message-area">
                     <div class="container-message flex-message">
-
-                        <div v-for="(message, index) in contacts[currentUserActive].messages" :class=" message.status === 'sent' ? 'message-send' : 'message-recived' " >
-                            <div class="message" >
+                       
+                        <div class="message" v-for="(message, index) in contacts[currentUserActive].messages" :class=" message.status === 'sent' ? 'message-send' : 'message-recived' " >
+                            
+                            <div class="message-text" >
                                 {{message.text}}
+                                <span @click="message.menu = !message.menu"><i class="fa-solid fa-chevron-down"></i></span>
                             </div>
 
                             <div class="date">
                                 {{message.date}}
+                            </div>
+
+                            <div class="menu" v-if="!message.menu">
+                                <div class="info">info messaggio</div>
+                                <div @click="removeMessage(index)" class="delete">elimina messaggio</div>    
                             </div>
                         </div>
                     </div>
