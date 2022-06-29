@@ -127,6 +127,8 @@ ul{
 }
 
 
+
+
 /* contatti */
 
 .contact-container{
@@ -216,6 +218,8 @@ ul{
 
 .message{
     padding: 15px;
+    overflow-wrap: break-word;
+    word-wrap: break-all;
 }
 
 .date{

@@ -2,6 +2,7 @@ var app = new Vue({
 	el: '#root',
 	data: {
 		currentUserActive:0,
+		filterText: '',
 		newMessage:'',
 		contacts: [
 			{
@@ -128,6 +129,23 @@ var app = new Vue({
 				}, 	 
 			);
 		},
+
+		
+		filterTextElement(){
+			const searchText = this.filterText.toLowerCase();
+
+			this.contacts.forEach(contact => {
+
+				const elementText = contact.name.toLowerCase();
+
+					if(elementText.includes(searchText)) {
+						contact.visible = true;
+					} else {
+						contact.visible = false;
+					}
+				
+			});
+		}
 	}
 });
   
