@@ -2,6 +2,7 @@ var app = new Vue({
 	el: '#root',
 	data: {
 		currentUserActive:0,
+		currentMenu: null,
 		filterText: '',
 		newMessage:'',
 		contacts: [
@@ -82,7 +83,7 @@ var app = new Vue({
 			},
 			{
 				name: 'Luisa',
-				avatar: '_4',
+				avatar: '_6',
 				visible: true,
 				messages: [
 					{
@@ -107,6 +108,11 @@ var app = new Vue({
 		// funzione per selezionare la chat da aprire
 		selectChat(index){
 			this.currentUserActive = index;
+			// resetto la pagina al click di ogni tente
+			this.contacts[this.currentUserActive].messages.forEach((element) =>{
+				this.currentMenu = element;
+				this.currentMenu.menu = true;
+			});
 		},
 		
 		// funzione per mandare un messaggio nella chat 
@@ -143,7 +149,7 @@ var app = new Vue({
 			);
 		},
 
-		
+		// funzione per filtrare i nomi tramite input 
 		filterTextElement(){
 			const searchText = this.filterText.toLowerCase();
 
@@ -159,11 +165,35 @@ var app = new Vue({
 				
 			});
 		},
-
+		// funzione per rimuovere i messaggi della chet 
 		removeMessage(index){
 			this.contacts[this.currentUserActive].messages.splice(index,1)
 
+		},
+		// funzione per visulizzare il menu in toggle
+		messageMenu(message){
+			if(message.menu === true){
+				this.contacts[this.currentUserActive].messages.forEach((element) =>{
+					this.currentMenu = element;
+					this.currentMenu.menu = true;
+				});
+	
+					message.menu = !this.currentMenu.menu;
+					console.log(this.currentMenu.menu)
+			}else{
+				message.menu = true
+			}
+			
+			if(this.currentUserActive != this.currentUserActive ){
+				this.currentMenu.menu = true;
+			}
 		}
+
+		
+
+	
+		
+
 	}
 }); 
   

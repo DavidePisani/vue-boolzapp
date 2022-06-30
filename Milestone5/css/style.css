@@ -126,9 +126,12 @@ ul{
 }
 
 .search-bar input{
-    width: 60%;
+    width: 70%;
     margin: 0 auto;
     border: 0;
+    height: 25px;
+    outline: none;
+    padding-left: 7px;
 }
 
 
@@ -242,6 +245,7 @@ ul{
     align-self: flex-start;
     width: 45%;
     border-radius: 12px;
+    margin-bottom: 20px;
 }
 
 .message-text{
@@ -286,11 +290,12 @@ ul{
 
 .info,.delete{
     padding: 5px;
-    border: 1px solid white
+    border: 10px solid white;
+
 }
 
 .delete:hover , .info:hover{
-    background-color: #7d8586;
+    background-color: lightgray;
  }
 
 
@@ -317,4 +322,5 @@ ul{
     height: 30px;
     border: 0;
     padding-left: 20px;
+    outline: none;
 }
