@@ -119,20 +119,23 @@ var app = new Vue({
 		addMessages(){
 			let currentDate = new Date().toLocaleDateString();
 			let currentHours = new Date().toLocaleTimeString();
-			if(this.newMessage.length > 0){
+			const newMessageTrim = this.newMessage.trim()
+			if(newMessageTrim.length > 0){
 				this.contacts[this.currentUserActive].messages.push(
 					{
 						date: currentDate + ' ' + currentHours,
-						text: this.newMessage,
+						text: newMessageTrim,
 						status: 'sent',
 						menu: true,	
 					}, 
 					 
-				),
-				this.newMessage= '';				
+				);
+				this.newMessage= '';
+				// funzione per ricevere il messaggio dopo 1 secondo
+				setTimeout(this.reciveMessage, 1000);				
 			}
-			// funzione per ricevere il messaggio dopo 1 secondo
-			setTimeout(this.reciveMessage, 1000)			
+			
+					
 		},
 
 		// funzione per ricevere il messaggio 
