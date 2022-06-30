@@ -168,7 +168,7 @@ var app = new Vue({
 				
 			});
 		},
-		// funzione per rimuovere i messaggi della chet 
+		// funzione per rimuovere i messaggi della chat
 		removeMessage(index){
 			this.contacts[this.currentUserActive].messages.splice(index,1)
 
@@ -185,10 +185,6 @@ var app = new Vue({
 					console.log(this.currentMenu.menu)
 			}else{
 				message.menu = true
-			}
-			
-			if(this.currentUserActive != this.currentUserActive ){
-				this.currentMenu.menu = true;
 			}
 		}
 
